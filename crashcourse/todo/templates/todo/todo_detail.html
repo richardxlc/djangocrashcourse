@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+
+{% block content %}
+    <div class="text-center">
+    {% if request.user.is_authenticated %}
+    <h4>您好，{{ request.usere.username }}</h4>
+    {% else %}
+    <h4>您好,您现在还没有登录</h4>
+    {% endif %}
+    </div>
+    <div class="card">
+        <div class="card-header">
+            待办事项名称：{{ todo.name }}
+        </div>
+        <div class="card-body">
+            <p>截止日期：{{ todo.due_date }}</p>  
+        </div>
+        <div class="card-footer">
+            <p><a class="btn btn-secondary" href="/{{todo.id}}/update/">更新</a></p>
+            <p><a class="btn btn-secondary"  href="/{{todo.id}}/delete/">删除</a></p>
+        </div>
+    </div>
+     
+    
+{% endblock %}
+    

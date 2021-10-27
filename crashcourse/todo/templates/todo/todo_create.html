@@ -1,14 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-6 offset-4">
-        <h4>创建新的待办事项</h4>   
-        <Form method="POST">
-            {% csrf_token %}
-            {{form.as_p}}
-            <button class="btn btn-primary" type="submit">创建</button>
-        </Form>
+<section>
+    <div class="container">
+        <div class="row justify-content-center text-center mt-5">
+            <div class="col12">
+                <h2>新建一个待办事项</h2>
+            </div>
+
+        </div>
+        <div class="row justify-content-center text-center mt-5">
+            <div class="col12">
+                <Form method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button class="btn btn-primary" type="submit">创建</button>
+                </Form>
+            </div>
+        </div>
     </div>
-    </div>
+</section>
+    
 {% endblock%}

@@ -269,4 +269,4 @@ tags
 
 .pytest_cache/
 
-db.sqlite3
+.sqlite3
